@@ -1,14 +1,14 @@
 public with sharing class AccountTriggerHandler extends TriggerHandler {
     private List<Account> newAccounts;
-    private Map<Id, Account> newMap;
+    private Map<Id, Account> newAccMap;
     private List<Account> oldAccounts;
-    private Map<Id, Account> oldMap;    
+    private Map<Id, Account> oldAccMap;    
     
     public AccountTriggerHandler() {
         this.newAccounts = (List<Account>) Trigger.new;
-        this.newMap = (Map<Id, Account>) Trigger.newMap;
+        this.newAccMap = (Map<Id, Account>) Trigger.newMap;
         this.oldAccounts = (List<Account>) Trigger.old;
-        this.oldMap = (Map<Id, Account>) Trigger.oldMap;
+        this.oldAccMap = (Map<Id, Account>) Trigger.oldMap;
     }
 
     public override void beforeInsert() {
