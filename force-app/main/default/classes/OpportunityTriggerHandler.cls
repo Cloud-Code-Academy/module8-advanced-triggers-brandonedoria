@@ -12,11 +12,12 @@ public with sharing class OpportunityTriggerHandler extends TriggerHandler {
     }
 
     public override void beforeInsert() {
-        OpportunityHelper.defaultType(this.newOpportunities);
+        OpportunityHelper.newCustomer(this.newOpportunities);
     }
     
     public override void beforeUpdate() {
         OpportunityHelper.overFiveGs(this.newOpportunities);
+        // OpportunityHelper.getTheCEOs(this.newOppMap);
         OpportunityHelper.getTheCEOs(this.newOpportunities);
         OpportunityHelper.stageChange(this.newOpportunities, this.oldOppMap);
     }
